@@ -4,8 +4,13 @@ from tabulate import tabulate
 from mtg_scryfall import get_card_from_scryfall, insert_card
 from moxfield_import import import_deck_from_list
 from collection import import_collection_from_list, view_collection_ui
+import os
 
 from db import conn, cur
+
+def clear_screen():
+    os.system('cls' if os.name == 'nt' else 'clear')
+
 
 def print_card(name):
     card = get_card_from_scryfall(name)
@@ -105,6 +110,7 @@ def import_collection_ui():
 
 
 def main_loop():
+    clear_screen()
     while True:
         print("\n====== MTG Commander Database CLI ======")
         print("1. Look up a card by name")
@@ -115,6 +121,8 @@ def main_loop():
         print("6. Exit")
 
         choice = input("Choose an option (1–6): ").strip()
+
+        clear_screen()
 
         if choice == "1":
             card_lookup_ui()

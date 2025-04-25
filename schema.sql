@@ -27,7 +27,7 @@ CREATE TABLE card_colors (
 
 
 CREATE TABLE decks (
-    deck_id INTEGER PRIMARY KEY AUTOINCREMENT,
+    deck_id INTEGER PRIMARY KEY,
     name TEXT,
     commander_id INTEGER,
     source_id INTEGER,
