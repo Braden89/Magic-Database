@@ -108,31 +108,26 @@ def main_loop():
     while True:
         print("\n====== MTG Commander Database CLI ======")
         print("1. Look up a card by name")
-        print("2. View a deck by deck ID")
-        print("3. Search decks in your DB by commander name")
-        print("4. List all imported decks")
-        print("5. Import deck from text list (Moxfield-style)")
-        print("6. Import card collection from text list")
-        print("7. View your collection")
-        print("8. Exit")
+        print("2. Import deck from text list (Moxfield-style)")
+        print("3. Import card collection from text list")
+        print("4. View and filter your collection")
+        print("5. Manage decks")
+        print("6. Exit")
 
-        choice = input("Choose an option (1–8): ").strip()
+        choice = input("Choose an option (1–6): ").strip()
 
         if choice == "1":
             card_lookup_ui()
         elif choice == "2":
-            deck_lookup_ui()
-        elif choice == "3":
-            search_decks_by_commander()
-        elif choice == "4":
-            list_all_decks()
-        elif choice == "5":
             import_manual_deck_ui()
-        elif choice == "6":
+        elif choice == "3":
             import_collection_ui()
-        elif choice == "7":
+        elif choice == "4":
             view_collection_ui()
-        elif choice == "8":
+        elif choice == "5":
+            from deck import deck_menu
+            deck_menu()
+        elif choice == "6":
             print("👋 Goodbye!")
             break
         else:
