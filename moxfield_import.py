@@ -4,7 +4,7 @@ import sqlite3
 from datetime import date
 from db import conn, cur
 
-line_regex = re.compile(r"(?P<qty>\d+)\s+(?P<name>.+?)\s+\([A-Z0-9]+\)\s+\d+[a-zA-Z]*")
+line_regex = re.compile(r"(?P<qty>\d+)\s+(?P<name>.+?)\s+\(.*")
 
 def parse_decklist(text: str):
     lines = [line.strip() for line in text.strip().splitlines() if line.strip()]
