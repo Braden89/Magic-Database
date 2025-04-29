@@ -1,10 +1,15 @@
 import sqlite3
+import os
 from datetime import date
 from tabulate import tabulate
 from mtg_scryfall import get_card_from_scryfall, insert_card
 from moxfield_import import import_deck_from_list
+from deck import deck_menu
+from bacon import bacon_number_cli
 from collection import import_collection_from_list, view_collection_ui
-import os
+from bacon import bacon_number_cli
+
+
 
 from db import conn, cur
 
@@ -118,7 +123,8 @@ def main_loop():
         print("3. Import card collection from text list")
         print("4. View and filter your collection")
         print("5. Manage decks")
-        print("6. Exit")
+        print("6. Find bacon number between cards")
+        print("7. Exit")
 
         choice = input("Choose an option (1–6): ").strip()
 
@@ -133,9 +139,10 @@ def main_loop():
         elif choice == "4":
             view_collection_ui()
         elif choice == "5":
-            from deck import deck_menu
             deck_menu()
         elif choice == "6":
+            bacon_number_cli()
+        elif choice == "7":
             print("👋 Goodbye!")
             break
         else:
