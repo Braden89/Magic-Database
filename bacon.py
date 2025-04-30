@@ -4,7 +4,8 @@ from collections import deque
 # Cards we don't want to include in bacon paths (by name)
 BLACKLIST = set([
     "Sol Ring", "Arcane Signet", "Command Tower", "Forest", "Island", "Mountain", "Swamp", "Plains",
-    "Fabled Passage", "Evolving Wilds", "Arcane Lighthouse", "Temple of the False God",
+    "Fabled Passage", "Evolving Wilds", "Arcane Lighthouse", "Temple of the False God", "Wayfarer's Bauble",
+    "Fellwar Stone", "Lightning Greaves", "Swiftfoot Boots", "Thought Vessel", "Mind Stone"
 ])
 
 def build_graph():
